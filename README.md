@@ -9,9 +9,9 @@ Cool charts for iOS application [SWIFT 4]
 ### 4) Select the View and click on the "Show the identity inspector"
 ### 5) Select the appropriate Class
 ### 6) Connect the Chart (UIView subclass) to your code with an Outlet
-### 7) Init your Chart with the Method set(set(nb_param: UInt, 
-                                               color_param: UIColor, 
-                                               color_stat: UIColor, 
-                                               color_stat_border: UIColor, 
-                                               name_param: [String], 
-                                               value_param: [UInt]);
+### 7) Init your Chart with the Method set
+set(nb_param: UInt, color_param: UIColor, color_stat: UIColor, color_stat_border: UIColor, name_param: [String], value_param: [UInt]);
+
+## Features
+
+### 1) SpiderChart
