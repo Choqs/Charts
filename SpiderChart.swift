@@ -112,41 +112,6 @@ class SpiderChart: UIView
     draw_a(context: context, layer: shapeLayer);
   }
   
-  func label()
-  {
-    //DRAW NAMES
-    let view_size_demi = view_size.height / 2.2;
-    var angle: CGFloat = 270;
-    for i in 0...nb_param - 1
-    {
-      angle = CGFloat(Int(angle) % 360);
-      let w: CGFloat = CGFloat(name_param[Int(i)].count) * 11;
-      let label = UILabel(frame: CGRect(x: 0, y: 0,  width: w, height: 11));
-      label.text = name_param[Int(i)];
-      if ((angle < 300  && angle > 240) || (angle > 60 && angle < 120))
-      {
-        label.textAlignment = .center;
-        label.center = CGPoint(x: view_size.width / 2 + view_size_demi * CGFloat(cos(.pi * Double(angle) / 180)),
-                               y: view_size.height / 2 + view_size_demi * CGFloat(sin(.pi * Double(angle) / 180)));
-      }
-      else if (angle <= 300 && angle >= 60)
-      {
-        label.textAlignment = .right;
-        label.center = CGPoint(x: view_size.width / 2 + view_size_demi * CGFloat(cos(.pi * Double(angle) / 180)) - w / 2,
-                               y: view_size.height / 2 + view_size_demi * CGFloat(sin(.pi * Double(angle) / 180)));
-      }
-      else
-      {
-        label.textAlignment = .left;
-        label.center = CGPoint(x: view_size.width / 2 + view_size_demi * CGFloat(cos(.pi * Double(angle) / 180)) + w / 2,
-                               y: view_size.height / 2 + view_size_demi * CGFloat(sin(.pi * Double(angle) / 180)));
-      }
-      label.font = UIFont (name: "Helvetica Neue", size: 11.0);
-      self.addSubview(label);
-      angle += 360 / CGFloat(nb_param);
-    }
-  }
-  
   override func draw(_ rect: CGRect)
   {
     //INIT SOME VARIABLE
@@ -156,7 +121,6 @@ class SpiderChart: UIView
     shapeLayer.fillColor = UIColor.clear.cgColor;
     shapeLayer.lineWidth = 2.0;
     shapeLayer.lineCap = kCALineCapRound;
-    
     //DRAW STATS
     var angle: CGFloat = 270;
     var index: CGFloat = CGFloat(value_param[0]) / 100 * view_size.height / 2.4;
@@ -192,6 +156,37 @@ class SpiderChart: UIView
     zoomAnimation.isRemovedOnCompletion = false;
     rectangleLayer.add(zoomAnimation, forKey: "zoom");
  
+    
+    let view_size_demi = view_size.height / 2.2;
+    angle = 270;
+    for i in 0...nb_param - 1
+    {
+      angle = CGFloat(Int(angle) % 360);
+      let w: CGFloat = CGFloat(name_param[Int(i)].count) * 11;
+      let label = UILabel(frame: CGRect(x: 0, y: 0,  width: w, height: 11));
+      label.text = name_param[Int(i)];
+      if ((angle < 300  && angle > 240) || (angle > 60 && angle < 120))
+      {
+        label.textAlignment = .center;
+        label.center = CGPoint(x: view_size.width / 2 + view_size_demi * CGFloat(cos(.pi * Double(angle) / 180)),
+                               y: view_size.height / 2 + view_size_demi * CGFloat(sin(.pi * Double(angle) / 180)));
+      }
+      else if (angle <= 300 && angle >= 60)
+      {
+        label.textAlignment = .right;
+        label.center = CGPoint(x: view_size.width / 2 + view_size_demi * CGFloat(cos(.pi * Double(angle) / 180)) - w / 2,
+                               y: view_size.height / 2 + view_size_demi * CGFloat(sin(.pi * Double(angle) / 180)));
+      }
+      else
+      {
+        label.textAlignment = .left;
+        label.center = CGPoint(x: view_size.width / 2 + view_size_demi * CGFloat(cos(.pi * Double(angle) / 180)) + w / 2,
+                               y: view_size.height / 2 + view_size_demi * CGFloat(sin(.pi * Double(angle) / 180)));
+      }
+      label.font = UIFont (name: "Helvetica Neue", size: 11.0);
+      self.addSubview(label);
+      angle += 360 / CGFloat(nb_param);
+    }
   }
   
   
@@ -201,7 +196,6 @@ class SpiderChart: UIView
     axes();
     grid_intern();
     grid_extern();
-    label();
   }
   
   func draw_a (context: UIBezierPath, layer: CAShapeLayer)
