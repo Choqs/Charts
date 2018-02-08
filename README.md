@@ -12,8 +12,6 @@ Cool charts for iOS application [SWIFT 4]
 ```swift
   @IBOutlet weak var my_chart: SpiderChart!
 ```
-    my_chart.trace();
-  }
 7) Init your Chart with the Method set
 ```swift
 set(nb_param: UInt, color_param: UIColor, 
