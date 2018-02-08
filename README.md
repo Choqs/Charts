@@ -6,19 +6,19 @@ Cool charts for iOS application [SWIFT 4]
 1) Download the desired chart
 2) Add it to your project directory
 3) In the Storyboard, add a View from the Objects Library
-4) Select the View and click on the "Show the identity inspector"
-5) Select the appropriate Class
-6) Connect the Chart (UIView subclass) to your code with an Outlet
+4) Select the View and click on the "Show the identity inspector" and select the appropriate Class
+![alt text](https://github.com/Choqs/Charts/blob/master/readme_sources/anim3.gif)
+5) Connect the Chart (UIView subclass) to your code with an Outlet
 ```swift
   @IBOutlet weak var my_chart: SpiderChart!
 ```
-7) Init your Chart with the Method set
+6) Init your Chart with the Method set
 ```swift
 set(nb_param: UInt, color_param: UIColor, 
     color_stat: UIColor, color_stat_border: UIColor, 
     name_param: [String], value_param: [UInt]);
 ```
-8) Trace your Chart with the methode trace
+7) Trace your Chart with the methode trace
 ```swift
     my_chart.trace();
 
