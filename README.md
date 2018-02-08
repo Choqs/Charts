@@ -6,7 +6,7 @@ Cool charts for iOS application [SWIFT 4]
 1) Download the desired chart
 2) Add it to your project directory
 3) In the Storyboard, add a View from the Objects Library
-4) Select the View and click on the "Show the identity inspector" and select the appropriate Class
+4) Select the View, click on the "Show the identity inspector" and select the appropriate Class
 ![alt text](https://github.com/Choqs/Charts/blob/master/readme_sources/anim3.gif)
 5) Connect the Chart (UIView subclass) to your code with an Outlet
 ```swift
