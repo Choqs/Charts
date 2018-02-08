@@ -117,7 +117,7 @@ class SpiderChart: UIView
     //INIT SOME VARIABLE
     let shapeLayer = CAShapeLayer();
     let context = UIBezierPath();
-    shapeLayer.strokeColor = UIColor.blue.cgColor;
+    shapeLayer.strokeColor = color_stat.cgColor;
     shapeLayer.fillColor = UIColor.clear.cgColor;
     shapeLayer.lineWidth = 2.0;
     shapeLayer.lineCap = kCALineCapRound;
@@ -138,13 +138,13 @@ class SpiderChart: UIView
     context.close();
     draw_a(context: context, layer: shapeLayer);
     
-    
+    shapeLayer.strokeColor = color_stat_border.cgColor;
     //ANNIMATION FILLING
     let startPath = UIBezierPath(rect: CGRect(x: view_size.width / 2, y: view_size.height / 2,
                                               width: 10, height: 10));
     let rectangleLayer = CAShapeLayer();
     rectangleLayer.path = startPath.cgPath;
-    rectangleLayer.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.5).cgColor;
+    rectangleLayer.fillColor = color_stat.withAlphaComponent(0.5).cgColor;
  
     self.layer.addSublayer(rectangleLayer);
     
