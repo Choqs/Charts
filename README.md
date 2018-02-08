@@ -16,5 +16,5 @@ set(nb_param: UInt, color_param: UIColor, color_stat: UIColor, color_stat_border
 
 ### 1) SpiderChart
 
-![alt text](https://github.com/Choqs/Charts/blob/master/readme_sources/anim.gif)
+![alt text](https://github.com/Choqs/Charts/blob/master/readme_sources/anim.gif)![alt text](https://github.com/Choqs/Charts/blob/master/readme_sources/anim2.gif)
 
