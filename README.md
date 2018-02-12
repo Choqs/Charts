@@ -15,10 +15,10 @@ Cool charts for iOS application [SWIFT 4]
 6) Init your Chart with the Method set
 ```swift
 set(nb_param: UInt, color_param: UIColor, 
-    color_stat: UIColor, color_stat_border: UIColor, 
-    name_param: [String], value_param: [UInt]);
+    color_stat: [UIColor], color_stat_border: [UIColor], 
+    name_param: [String], value_param: [[UInt]]);
 ```
-7) Trace your Chart with the methode trace
+7) Trace your Chart with the Method trace
 ```swift
     my_chart.trace();
 
