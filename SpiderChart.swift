@@ -15,7 +15,7 @@ class SpiderChart: UIView
   var color_stat: [UIColor] = [UIColor.cyan];
   var color_stat_border: [UIColor] = [UIColor.blue];
   var name_param: [String] = ["Execution", "Landing", "Style", "Creativity", "Difficulty"];
-  var value_param: [[UInt]] = [[90, 10, 69, 85, 32]];
+  var value_param: [[Int]] = [[90, 10, 69, 85, 32]];
   var view_size: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0);
 
   //[String: Float]();
@@ -27,7 +27,7 @@ class SpiderChart: UIView
   }
   
   func set(nb_param: UInt, color_param: UIColor, color_stat: [UIColor],
-           color_stat_border: [UIColor], name_param: [String], value_param: [[UInt]])
+           color_stat_border: [UIColor], name_param: [String], value_param: [[Int]])
   {
     self.nb_param = nb_param;
     self.color_param = color_param;
@@ -197,6 +197,7 @@ class SpiderChart: UIView
   
   func trace()
   {
+    self.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
     axes();
     grid_intern();
     grid_extern();
