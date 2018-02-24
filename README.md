@@ -19,7 +19,7 @@ Cool charts for iOS application [SWIFT 4]
 
 6) Init your Chart with the Method set
 ```swift
-set(nb_param: UInt, color_param: UIColor, 
+my_chart.set(nb_param: UInt, color_param: UIColor, 
     color_stat: [UIColor], color_stat_border: [UIColor], 
     name_param: [String], value_param: [[Int]]);
 ```
