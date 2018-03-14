@@ -44,7 +44,7 @@ class SpiderChart: UIView
     let context = UIBezierPath();
     shapeLayer.strokeColor = color_param.cgColor;
     shapeLayer.fillColor = UIColor.clear.cgColor;
-    shapeLayer.lineWidth = 1.0
+    shapeLayer.lineWidth = 1.0;
     shapeLayer.lineCap = kCALineCapRound;
     //DRAW AXES
     var angle: CGFloat = 270;
@@ -147,7 +147,7 @@ class SpiderChart: UIView
     }
   }
   
-  func test()
+  func coloring()
   {
     for l in 0...value_param.count - 1
     {
@@ -176,6 +176,7 @@ class SpiderChart: UIView
       draw_a(context: context, layer: shapeLayer);
       
       shapeLayer.strokeColor = color_stat_border[l].cgColor;
+      shapeLayer.lineWidth = 3.0;
       //ANNIMATION FILLING
       let startPath = UIBezierPath(rect: CGRect(x: view_size.width / 2, y: view_size.height / 2,
                                                 width: 10, height: 10));
@@ -198,10 +199,11 @@ class SpiderChart: UIView
   func trace()
   {
     self.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+    draw(CGRect());
     axes();
     grid_intern();
     grid_extern();
-    test();
+    coloring();
   }
   
   func draw_a (context: UIBezierPath, layer: CAShapeLayer)
