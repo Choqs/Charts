@@ -1,0 +1,11 @@
+framework module iCharts {
+  umbrella header "iCharts.h"
+
+  export *
+  module * { export * }
+}
+
+module iCharts.Swift {
+    header "iCharts-Swift.h"
+    requires objc
+}
